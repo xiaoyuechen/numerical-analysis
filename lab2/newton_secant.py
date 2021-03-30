@@ -4,7 +4,7 @@
 # However, according to https://en.wikipedia.org/wiki/Secant_method,
 # Scant method might not converge if f'=0 is on [x0, x1].
 # I tried with x0=4 and x1=6 for the first equation.
-# Clearly f'=0 is in [x0, 1], but Secant still converges.
+# Clearly f'=0 is in [x0, x1], but Secant still converges.
 
 # Note that we use recursion instead of iterations in the implementation.
 # The reason is to improve the readability of the code.
