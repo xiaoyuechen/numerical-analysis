@@ -1,0 +1,128 @@
+\documentclass{article}
+
+\usepackage{amsmath, amssymb}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	stringstyle=\color{codepurple},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,
+	captionpos=b,
+	keepspaces=true,
+	showspaces=false,
+	showstringspaces=false,
+	showtabs=false,
+	tabsize=2
+}
+
+\lstset{style=mystyle}
+
+\title{Lab assignment 4 report}
+\author{Xiaoyue Chen}
+
+\begin{document}
+
+\maketitle
+
+\section{}
+\begin{align*}
+	 & \quad \begin{bmatrix}
+		1  & 5  & \vline & 7  \\
+		-2 & -7 & \vline & -5
+	\end{bmatrix}
+	\begin{matrix}
+		\\
+		+2R_1
+	\end{matrix}          \\
+	 & \sim
+	\begin{bmatrix}
+		1 & 5 & \vline & 7 \\
+		0 & 3 & \vline & 9
+	\end{bmatrix}
+\end{align*}
+Hence $\boldsymbol{x}=(-8, 3)^\intercal$.
+
+\section{}
+\begin{align*}
+	 & \quad \begin{bmatrix}
+		0  & 2  & 1  & \vline & -8 \\
+		1  & -2 & -3 & \vline & 0  \\
+		-1 & 1  & 2  & \vline & 3
+	\end{bmatrix}
+	\begin{matrix}
+		=R_3 \\
+		\\
+		=R1
+	\end{matrix}          \\
+	 & \sim \begin{bmatrix}
+		-1 & 1  & 2  & \vline & 3  \\
+		1  & -2 & -3 & \vline & 0  \\
+		0  & 2  & 1  & \vline & -8
+	\end{bmatrix}
+	\begin{matrix}
+		\\
+		+R_1 \\
+		\\
+	\end{matrix}          \\
+	 & \sim \begin{bmatrix}
+		-1 & 1  & 2  & \vline & 3  \\
+		0  & -1 & -1 & \vline & 3  \\
+		0  & 2  & 1  & \vline & -8
+	\end{bmatrix}
+	\begin{matrix}
+		\\
+		\\
+		+2R_2
+	\end{matrix}          \\
+	 & \sim \begin{bmatrix}
+		-1 & 1  & 2  & \vline & 3  \\
+		0  & -1 & -1 & \vline & 3  \\
+		0  & 0  & -1 & \vline & -2
+	\end{bmatrix}
+\end{align*}
+Hence $\boldsymbol{x} = (-4, -5, 2)^\intercal$
+
+\section{}
+\begin{align*}
+	 & \quad \begin{bmatrix}
+		1 & -2 & -6  & \vline & 12  \\
+		2 & 4  & 12  & \vline & -17 \\
+		1 & -4 & -12 & \vline & 22
+	\end{bmatrix}
+	\begin{matrix}
+		\\
+		-2R_1 \\
+		-R_1
+	\end{matrix}          \\
+	 & \sim \begin{bmatrix}
+		1 & -2 & -6 & \vline & 12  \\
+		0 & 8  & 24 & \vline & -41 \\
+		0 & -2 & -6 & \vline & 10
+	\end{bmatrix}
+	\begin{matrix}
+		\\
+		\\
+		+\frac{R_2}{4}
+	\end{matrix}          \\
+	 & \sim \begin{bmatrix}
+		1 & -2 & -6 & \vline & 12          \\
+		0 & 8  & 24 & \vline & -41         \\
+		0 & 0  & 0  & \vline & \frac{1}{4}
+	\end{bmatrix}
+\end{align*}
+Hence the system is inconsistent.
+
+\section{}
+If you would like to run the file without awkwardly copying it from this pdf,
+go to \url{https://github.com/xiaoyuechen/numerical-analysis/tree/master/lab4}
+\lstinputlisting[language=Python]{gaussian_elimination.py}
+\end{document}
