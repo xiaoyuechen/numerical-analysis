@@ -1,9 +1,7 @@
-from collections.abc import Callable
 from math import sqrt
 
 
-def trapezoidal(f: Callable[[float], float], a: float, b: float,
-                n: int) -> float:
+def trapezoidal(f, a, b, n):
     """Calculate an integral using the trapezoidal rule
 
     Parameters
@@ -26,7 +24,7 @@ def trapezoidal(f: Callable[[float], float], a: float, b: float,
     return sum
 
 
-def simpson(f: Callable[[float], float], a: float, b: float, n: int) -> float:
+def simpson(f, a, b, n):
     """Calculate an integral using the Simpson's rule
 
     Parameters
