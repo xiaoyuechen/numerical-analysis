@@ -5,4 +5,5 @@
 *.toc
 *.log
 *.gz
+*.out
 report.pdf

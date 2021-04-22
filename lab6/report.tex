@@ -1,0 +1,67 @@
+\documentclass{article}
+
+\usepackage{amsmath, amssymb}
+\usepackage{listings}
+\usepackage{hyperref}
+
+\title{Lab 6 report}
+\author{Anonymous}
+
+\begin{document}
+\maketitle
+
+\section{}
+Step 1
+\begin{align*}
+	 & r_{11} = \|\boldsymbol{a_1}\| = 1                              \\
+	 & \boldsymbol{q}_1 = \frac{\boldsymbol{a}_1}{r_{11}} = (0,1,0)^T
+\end{align*}
+
+Step 2
+\begin{align*}
+	 & r_{12} = \boldsymbol{q}_1^T \boldsymbol{a}_2 = 1              \\
+	 & \boldsymbol{p}_1 = r_{12} \boldsymbol{q}_1 = \boldsymbol{q}_1 \\
+	 & \boldsymbol{a}_2 - \boldsymbol{p}_1 = (1,0,0)^T               \\
+	 & r_{22} = \|\boldsymbol{a}_2 - \boldsymbol{p}_1\| = 1          \\
+	 & \boldsymbol{q}_2 =
+	\frac
+	{\boldsymbol{a}_2 - \boldsymbol{p}_1}
+	{r_{22}}
+	= (1,0,0)^T
+\end{align*}
+
+Step 3
+\begin{align*}
+	 & r_{13} = \boldsymbol{q}_1^T \boldsymbol{a}_3
+	= 2,~ r_{23} = \boldsymbol{q}_2^T \boldsymbol{a}_3 = 1                   \\
+	 & \boldsymbol{p}_2 = r_{13}\boldsymbol{q}_1 + r_{23}\boldsymbol{q}_2
+	= 2\boldsymbol{q}_1 + \boldsymbol{q}_2 = (1,2,0)^T                       \\
+	 & \boldsymbol{a}_3 - \boldsymbol{p}_2 = (0,0,3)^T                       \\
+	 & r_{33} = \|\boldsymbol{a}_3 - \boldsymbol{p}_2\| = 3                  \\
+	 & \boldsymbol{q}_3 = \frac{\boldsymbol{a}_3 - \boldsymbol{p}_2}{r_{33}}
+	= (0,0,1)^T
+\end{align*}
+
+Hence
+\begin{equation*}
+	A = QR =
+	\begin{pmatrix}
+		0 & 1 & 0 \\
+		1 & 0 & 0 \\
+		0 & 0 & 1
+	\end{pmatrix}
+	\begin{pmatrix}
+		1 & 1 & 2 \\
+		0 & 1 & 1 \\
+		0 & 0 & 3
+	\end{pmatrix}
+\end{equation*}
+
+\section{}
+It might be easier to view the code here:
+% \begin{noindent}
+\url{https://github.com/xiaoyuechen/numerical-analysis/blob/master/lab6/qr_decompose.py}
+% \end{noindent}
+\lstinputlisting[language=Python]{qr_decompose.py}
+
+\end{document}
