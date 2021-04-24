@@ -1,0 +1,58 @@
+\documentclass{article}
+
+\usepackage{amsmath, amssymb}
+\usepackage{listings}
+\usepackage{hyperref}
+
+\title{Lab 7 report}
+\author{Anonymous}
+
+\begin{document}
+\maketitle
+
+Note: you could also view all the code here:\\
+% \begin{noindent}
+\url{https://github.com/xiaoyuechen/numerical-analysis/tree/master/lab7}
+% \end{noindent}
+
+\section{}
+\begin{equation*}
+	\begin{pmatrix}
+		5  & -2 & 3  & \vline & -1 \\
+		-3 & 9  & 1  & \vline & 2  \\
+		2  & -1 & -7 & \vline & 3
+	\end{pmatrix}
+\end{equation*}
+
+$R_2 = R_2 + \frac{3}{5}R_1,~ R_3 = R_3 - \frac{2}{5}R_1$
+\begin{equation*}
+	\begin{pmatrix}
+		5 & -2   & 3    & \vline & -1  \\
+		0 & 7.8  & 2.8  & \vline & 1.4 \\
+		0 & -0.2 & -8.2 & \vline & 3.4
+	\end{pmatrix}
+\end{equation*}
+
+$R_3 = R_3 + \frac{1}{39}R_2$
+\begin{equation*}
+	\begin{pmatrix}
+		5 & -2  & 3               & \vline & -1             \\
+		0 & 7.8 & 2.8             & \vline & 1.4            \\
+		0 & 0   & -\frac{317}{39} & \vline & \frac{134}{39}
+	\end{pmatrix}
+\end{equation*}
+
+Hence $\boldsymbol{x}\approx(0.1861,0.3312,-0.4227)^T$
+
+\section{}
+\lstinputlisting[language=Python]{jacobi.py}
+
+\section{}
+The Jacobi method could give very precise result (almost the same as using
+Gaussian elimination) when the convergence variable $\|x^{(k+1)}-x^{(k)}\|_2$ is
+sufficiently small.
+
+\section{}
+\lstinputlisting[language=Python]{gradient_descent.py}
+
+\end{document}
