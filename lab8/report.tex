@@ -1,0 +1,113 @@
+\documentclass{article}
+
+\usepackage{amsmath, amssymb}
+\usepackage{enumitem}
+
+\title{Lab 8 report}
+\author{Anonymous}
+
+\begin{document}
+\maketitle
+\section{}
+\begin{enumerate}[label=(\alph*)]
+	\item $\epsilon_{x-2y} = \frac{x}{x-2y}\epsilon_x -
+		      \frac{2y}{x-2y}\epsilon_y$
+	\item $\epsilon_{4x-5y} = \frac{4x}{4x-5y}\epsilon_x -
+		      \frac{5y}{4x-5y}\epsilon_y$
+	\item $\epsilon_{3xy} = \epsilon_x + \epsilon_y$
+	\item $\epsilon_{{x^3}/{y^5}} =
+		      \epsilon_{x^3} - \epsilon_{y^5} =
+		      3\epsilon_x - 5\epsilon_y$
+	\item
+	      $\widetilde{\sqrt{x}} = \sqrt{x(1+\epsilon_x)} \simeq \sqrt{x} (1 + \frac{1}{2} \epsilon_x)$
+
+	      Hence $\epsilon_{\sqrt{x}} = \frac{1}{2} \epsilon_x$
+	\item $\epsilon_{\sqrt{x^3}} = \frac{3}{2} \epsilon_x$
+	\item $\epsilon_{\sqrt{2xy}} = \frac{1}{2} x + \frac{1}{2} y$
+	\item $\epsilon_{2 \sqrt{\frac{x}{3y}}} = \frac{1}{2} \epsilon_x -
+		      \frac{1}{2} \epsilon_y$
+	\item $\epsilon_{2 \sqrt{\frac{x^3}{3y}}} = \frac{3}{2} \epsilon_x -
+		      \frac{1}{2} \epsilon_y$
+	\item
+	      \begin{align*}
+		             & \widetilde{ \frac{x}{y} + \frac{y}{x} }                                                                                                             \\
+		      =      & \widetilde{\frac{x^2 + y^2}{xy}}                                                                                                                    \\
+		      =      & \frac{x^2 (1+\epsilon_x)^2 + y^2 (1+\epsilon_y)^2} {xy (1+\epsilon_x) (1+\epsilon_y)}                                                               \\
+		      \simeq & \frac{x^2 + y^2 + 2x^2\epsilon_x + 2y^2\epsilon_y}{xy (1 + \epsilon_x + \epsilon_y)}                                                                \\
+		      =      & \frac{x^2 + y^2}{xy} \cdot \frac{1 + \frac{2x^2\epsilon_x}{x^2 + y^2} + \frac{2y^2\epsilon_y}{x^2 + y^2}} {1 + \epsilon_x + \epsilon_y}             \\
+		      \simeq & \frac{x^2 + y^2}{xy} \cdot \left( 1 + \frac{2x^2\epsilon_x}{x^2 + y^2} + \frac{2y^2\epsilon_y}{x^2 + y^2} \right) ( 1 - (\epsilon_x + \epsilon_y) ) \\
+		      \simeq & \frac{x^2 + y^2}{xy} \cdot \left( 1 + \frac{2x^2\epsilon_x}{x^2 + y^2} + \frac{2y^2\epsilon_y}{x^2 + y^2} - (\epsilon_x + \epsilon_y) \right)       \\
+		      =      & \left( \frac{x}{y} + \frac{y}{x} \right) \cdot \left( 1 + \frac{x^2 - y^2}{x^2 + y^2} \epsilon_x + \frac{y^2 - x^2}{x^2 + y^2} \epsilon_y \right)
+	      \end{align*}
+	      Hence $\epsilon_{ \frac{x}{y} + \frac{y}{x} } = \frac{x^2 - y^2}{x^2 + y^2} \epsilon_x +
+		      \frac{y^2 - x^2}{x^2 + y^2} \epsilon_y $
+	\item $\epsilon_{x^2 + y^2} = \frac{2x^2}{x^2 + y^2} \epsilon_x +
+		      \frac{2y^2}{x^2 + y^2} \epsilon_y$
+\end{enumerate}
+
+\section{}
+Sphere
+\begin{align*}
+	 & \epsilon_R = \frac{0.1}{22.2} ~\mathrm{cm}                 \\
+	 & V = \frac{4}{3} \pi R^3 \simeq 45829.75 ~\mathrm{cm}^3     \\
+	 & \epsilon_V = 3 \epsilon_R = \frac{0.3}{22.2} \simeq 0.0135
+\end{align*}
+
+Cylinder
+\begin{align*}
+	 & V = \pi r^2 h \simeq 11038.30 ~\mathrm{cm}^3                                                   \\
+	 & \epsilon_V = 2\epsilon_r + \epsilon_h = 2 \frac{1.2}{12.0} \cdot \frac{1.1}{24.4} \simeq 0.245
+\end{align*}
+
+\section{}
+$\epsilon_F = \epsilon_P + 4\epsilon_a - \epsilon_l - \epsilon_w = 1.4 \%$
+
+\section{}
+$\boldsymbol{x}_1 = (0, 0.1)^T, \boldsymbol{x}_2 = (-0.17,
+	0.22)^T$.
+Left hand side $\frac{\|x_1 - x_2\|_2}{\|x_1\|_2} = 2.0809$, right hand side is
+$2.5836$. In this example, left hand side is less than right hand
+side. The proof is given during the lecture.
+
+\section{}
+\begin{equation*}
+	A =
+	\begin{pmatrix}
+		2 & 2 \\
+		2 & 2
+	\end{pmatrix}
+	, \boldsymbol{x} =
+	\begin{pmatrix}
+		a \\
+		a
+	\end{pmatrix}
+\end{equation*}
+$a$ is a non-zero constant. Assume the matrix norm is
+subordinate to vector norm $\|\cdot\|_V$, then
+
+$A \boldsymbol{x} = (4a, 4a)^T = 4 (a, a)^T = 4 \boldsymbol{x}$,
+hence $\|A\boldsymbol{x}\|_V = 4 \|\boldsymbol{x}\|_V$.
+
+By definition, $\|A\|_M = 2$, hence $\|A\|_M \|\boldsymbol{x}\|_V = 2 \|\boldsymbol{x}\|_V$.
+
+The condition $\|A\boldsymbol{x}\|_M \leq \|A\|_M \|\boldsymbol{x}\|_V$ holds only when $\boldsymbol{x}$ is
+a zero vector.
+
+Hence the matrix norm does not define an induced matrix norm.
+
+\section{}
+$A$ is non-singular, so $AA^{-1} = I$.
+
+By definition, $\kappa(A) = \|A\| \|A^{-1}\| \geq \|A
+	A^{-1}\| = \| I \| = 1$.
+
+\section{}
+\begin{align*}
+	\kappa(A) \kappa(B) = & \|A\| \|A^{-1}\| \|B\| \|B^{-1}\| \\
+	=                     & \|A\| \|B\| \|B^{-1}\| \|A^{-1}\| \\
+	\geq                  & \| A B \| \| B^{-1} A^{-1} \|     \\
+	=                     & \kappa(AB)
+\end{align*}
+Hence $\kappa(AB) \leq \kappa(A) \kappa(B)$.
+
+\end{document}
