@@ -6,4 +6,5 @@
 *.log
 *.gz
 *.out
+__pycache__
 report.pdf

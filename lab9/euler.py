@@ -18,9 +18,9 @@ def euler(f, h, t0, y0, tn):
          tn's value is at the end (returning the 
          intermediates are continent for plotting)
     """
-    n = floor((tn - t0) / h)
+    n = floor((tn - t0) / h) + 1
     ys = np.zeros(n)
-    ys[0] = f(t0, y0)
+    ys[0] = y0
     for i in range(1, n):
         tn = t0 + h * (i - 1)
         ys[i] = ys[i - 1] + h * f(tn, ys[i - 1])
