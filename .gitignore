@@ -6,5 +6,6 @@
 *.log
 *.gz
 *.out
+*.asv
 __pycache__
 report.pdf
